@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+@import url('https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css');
+:root{
+
+    --bgColor: #fff;
+    --textPrimary: #0000007f;
+    --textSecondary: #0d1e3c7c;
+    --primaryColor: #0a172ecd;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.emptyText{
+    transform: translate(0,62px);
+    opacity: 0;
+    transition: .5s linear;
+}
+.showemptyText{
+    transform: translate(0,0);
+    opacity: 1;
+}
+main{
+    width: 900px;
+    margin: 50px auto;
+    font-family:monospace;
+    background-color:var(--bgColor);
+    color: var(--textPrimary);
+    font-size: 1.4rem;
+}
+
+
+
+#info{
+    color: var(--primaryColor);
+}
+
+div#game{
+    line-height:40px;
+    height:200px;
+    overflow: hidden;
+    position: relative;
+}
+div#game:focus{
+    outline:0;
+}
+#words{
+    color: var(--textSecondary);
+}
+
+#focus-error {
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    padding-top: 35px;
+}
+#game:focus #focus-error{
+    display:none;
+}
+div.word{
+    display: inline-block;
+    font-family: monospace;
+    margin: 0 5px;
+}
+#numberChar{
+    color: #000000;
+    font-family: monospace;
+    font-family: 600;
+    
+}
+.letter.correct{
+    color: #000000;
+    background-color: rgba(220, 220, 45, 0.614);
+    font-weight: 600;
+}
+.letter.incorrect{
+    color: rgb(255, 255, 255);
+    background-color: rgba(101, 9, 9, 0.753);
+    font-weight: 600;
+}
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#cursor{
+    display:none;
+    width: 2px;
+    height: 1.6rem;
+    background:black;
+    position: fixed;
+    top: 198px;
+    left: 18px;
+    animation: blink .3s infinite;
+}
+
